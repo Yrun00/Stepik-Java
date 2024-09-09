@@ -4,11 +4,14 @@ class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         long digit = scan.nextLong();
-        long sum = digit;
-        for (int i = 1; i < digit; i++) {
-            if (digit % i == 0) sum = sum + i;
-        }
+        long sum = 0;
+        int dilimeter;
+        do {
 
+            dilimeter = scan.nextInt();
+            if (dilimeter < 0) continue;
+            if (digit % dilimeter == 0) sum++;
+        } while (dilimeter > 0);
         System.out.println(sum);
     }
 }
