@@ -3,36 +3,27 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int hours = scan.nextInt();
-        float salary = scan.nextFloat();
-        if (hours < 0 | salary < 0) {
-            System.out.println("ERROR");
-            return;
-        }
-        float pay = 0;
-        int iq = 0;
-        if (hours > 0 && hours <= 20) {
-            iq = 1;
-        } else if (hours > 20 && hours <= 40) {
-            iq = 2;
-        } else if (hours > 40) {
-            iq = 3;
-        }
-        switch (iq) {
-            case (1):
-                pay = hours * salary;
-                break;
-            case (2):
-                pay = 20 * salary+(hours-20)*salary*1.5F;
-                break;
-            case (3):
-                pay = 20 * salary+(20)*salary*1.5F+(hours-40)*salary*2;
-                break;
-            default:
-                break;
-        }
+        int ab = scan.nextInt();
+        int bc = scan.nextInt();
+        int weight = scan.nextInt();
+        int rate = 0;
+        final int tank = 300;
+        if (weight <= 500 && weight > 0) rate = 1;
+        else if (weight <= 1000) rate = 4;
+        else if (weight <= 1500) rate = 7;
+        else if (weight <= 2000) rate = 9;
 
-        System.out.printf("%5.2f\n", pay);
-
+        if (ab * rate <= tank && bc * rate <= tank && rate != 0) {
+            if ((ab + bc) * rate < tank) {
+                System.out.printf("%5.2f\n", 0.0);
+                return;
+            }
+            System.out.printf("%5.2f\n", (float) (Math.abs((ab+bc)*rate-tank)));
+        } else System.out.println("ERROR");
     }
 }
+//200 200 - 100
+//250 250 - 200
+//300 300 - 300
+//300 100 - 100
+//50 300 - 250
