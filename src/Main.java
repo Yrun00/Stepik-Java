@@ -3,14 +3,18 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int grade = scan.nextInt();
-        int bads = 0;
-        for (int i = 0; i < 9; i++) {
-            if (grade<4){
-                bads++;
-            }
-            grade = scan.nextInt();
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        double answer = 1;
+        if (b < a) {
+            int c = a;
+            a = b;
+            b = c;
         }
-        System.out.println(bads);
+        while (a <= b) {
+            answer = answer * a;
+            a++;
+        }
+        System.out.println(answer);
     }
 }
