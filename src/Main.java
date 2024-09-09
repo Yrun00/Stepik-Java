@@ -3,13 +3,12 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int digits = scan.nextInt();
-        int min = scan.nextInt();
-        for (int i = 1; i < digits; i++) {
-            int number = scan.nextInt();
-            if (min > number) min = number;
+        long digit = scan.nextLong();
+        long sum = digit;
+        for (int i = 1; i < digit; i++) {
+            if (digit % i == 0) sum = sum + i;
         }
 
-        System.out.println(min);
+        System.out.println(sum);
     }
 }
