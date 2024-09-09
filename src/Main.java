@@ -3,18 +3,13 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        double answer = 1;
-        if (b < a) {
-            int c = a;
-            a = b;
-            b = c;
+        int digits = scan.nextInt();
+        int min = scan.nextInt();
+        for (int i = 1; i < digits; i++) {
+            int number = scan.nextInt();
+            if (min > number) min = number;
         }
-        while (a <= b) {
-            answer = answer * a;
-            a++;
-        }
-        System.out.println(answer);
+
+        System.out.println(min);
     }
 }
