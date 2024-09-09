@@ -8,15 +8,11 @@ public class Main {
             System.out.print("ERROR");
             return;
         }
-        for (int i = 0; i < number; i = i + 2) {
-            int z = i;
-            while ((z - 2 >= 0)) {
-                z = z - 2;
-                System.out.print(" ");
-            }
-            for (int a = 1; a <= number; a++) {
+        for (int i = 1; i <= number; i++) {
 
-                if (i < a) System.out.print("*");
+            for (int a = 1; a <= number; a++) {
+                System.out.printf(("%d\t"), i * a);
+
             }
             System.out.println();
         }
