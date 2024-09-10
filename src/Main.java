@@ -8,7 +8,7 @@ public class Main {
         long b = scan.nextInt();
         for (; a <= b; a++) {
             BigInteger c = new BigInteger(String.valueOf(a));
-            boolean result = c.isProbablePrime(1);
+            boolean result = c.isProbablePrime(10);
             if (result) {
                 System.out.print(a + " ");
             }
