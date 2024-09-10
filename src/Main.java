@@ -6,7 +6,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         long a = scan.nextInt();
         long b = scan.nextInt();
-        for (; a < b; a++) {
+        for (; a <= b; a++) {
             BigInteger c = new BigInteger(String.valueOf(a));
             boolean result = c.isProbablePrime(1);
             if (result) {
