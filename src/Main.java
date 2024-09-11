@@ -4,10 +4,8 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int kol = simpleInRange(a, b);
-        System.out.println(kol);
+        int number = scan.nextInt();
+        printDivider(number);
     }
 
     static boolean isPrime(int number) {
@@ -30,5 +28,13 @@ class Main {
             if (isPrime(a)) c++;
         }
         return c;
+    }
+
+    static void printDivider(int number) {
+        for (long i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
     }
 }
