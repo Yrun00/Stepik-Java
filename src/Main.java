@@ -2,12 +2,26 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
-        String str = scan.next();
-        char symbol = str.charAt(0);
-        printTriangle(number, symbol);
+        double a = scan.nextDouble();
+        double result;
+        if (number == 2) {
+            double b = scan.nextDouble();
+            result = square(a, b);
+        } else result = square(a);
+
+        System.out.printf("%5.2f\n", result);
+    }
+
+    static double square(double a) {
+        return (a * a);
+    }
+
+    static double square(double a, double b) {
+        return (a * b);
     }
 
     static void printTriangle(int number, char symbol) {
