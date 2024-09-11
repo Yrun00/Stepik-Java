@@ -4,8 +4,10 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
-        printDivider(number);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int max = maxNumberDivider(a, b);
+        System.out.println(max);
     }
 
     static boolean isPrime(int number) {
@@ -30,11 +32,26 @@ class Main {
         return c;
     }
 
-    static void printDivider(int number) {
-        for (long i = 1; i <= number; i++) {
-            if (number % i == 0) {
-                System.out.print(i + " ");
+    static int maxNumberDivider(int a, int b) {
+        int maxNumber = 0;
+        int maxValue = 0;
+        for (; a <= b; a++) {
+            int nOD = numberOfDivisors(a);
+            if (nOD > maxValue) {
+                maxValue = nOD;
+                maxNumber = a;
             }
         }
+        return maxNumber;
+    }
+
+    static int numberOfDivisors(int number) {
+        int numberOfDivisors = 0;
+        for (long i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                numberOfDivisors++;
+            }
+        }
+        return numberOfDivisors;
     }
 }
