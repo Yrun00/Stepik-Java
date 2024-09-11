@@ -1,13 +1,31 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int max = maxNumberDivider(a, b);
-        System.out.println(max);
+        int number = scan.nextInt();
+        String str = scan.next();
+        char symbol = str.charAt(0);
+        printTriangle(number, symbol);
+    }
+
+    static void printTriangle(int number, char symbol) {
+        if (number < 1) {
+            System.out.print("ERROR");
+            return;
+        }
+        for (int i = 0; i < number; i = i + 2) {
+
+            for (int z = number / 2 - i / 2 + number % 2 - 1; z > 0; z--) {
+                System.out.print(" ");
+            }
+            for (int z = number % 2 - 1; z <= i; z++) {
+
+                System.out.print(symbol);
+            }
+            System.out.println();
+        }
     }
 
     static boolean isPrime(int number) {
